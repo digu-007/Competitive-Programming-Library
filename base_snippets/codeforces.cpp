@@ -14,7 +14,7 @@ using namespace __gnu_pbds;
 template < typename T > using ordered_set = tree < T, null_type, less < T >, rb_tree_tag, tree_order_statistics_node_update >;
 template < typename T > using MinPriorityQueue = priority_queue < T, vector < T >, greater < T > >;
 
-#ifndef ONLINE_JUDGE
+#ifdef HOME
 #define trace(...) __f(#__VA_ARGS__, __VA_ARGS__)
 template < typename Arg1 >
 void __f(const char* name, Arg1&& arg1) {
@@ -59,18 +59,18 @@ const db PI = acos(-1), EPS = 1 / db(1e6);
 mt19937_64 rang(chrono::high_resolution_clock::now().time_since_epoch().count());
 
 void test() {
-    
+
 }
 
 int main() {
     fast_io();
-    #ifndef ONLINE_JUDGE
+    #ifdef HOME
         freopen("input.txt", "r", stdin);
         freopen("output.txt", "w", stdout);
     #endif
     cout << fixed << setprecision(15);
     test();
-    #ifndef ONLINE_JUDGE
+    #ifdef HOME
         cout << "Time: " << (int)(clock() * 1000. / CLOCKS_PER_SEC) << "ms";
     #endif
     return 0;
