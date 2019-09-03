@@ -1,16 +1,18 @@
 namespace ModFunctions {
-	inline void add(int &a, int b) {
+	inline int add(int a, int b) {
 		a += b;
 		if (a >= MOD) {
 			a -= MOD;
 		}
+		return a;
 	}
 
-	inline void sub(int &a, int b) {
+	inline int sub(int a, int b) {
 		a -= b;
 		if (a < 0) {
 			a += MOD;
 		}
+		return a;
 	}
 
 	inline int mul(int a, int b) {
