@@ -94,7 +94,7 @@ void test() {
     e = 2 * n;
     for (int i = 0; i < n; ++i) {
         int a, b, c, d;
-        cin >> a >> b >> c >> d;
+        cin >> a >> b >> c >> d; // lower left, upper right
         rect[i][0].x = a, rect[i][0].y = b;
         rect[i][1].x = c, rect[i][1].y = d;
         events_h[2 * i].idx = i, events_h[2 * i].typ = false;

@@ -1,6 +1,6 @@
 db closest_pair() {
     sort(pnt, pnt + n, [&](pll a, pll b) {
-        return a.S < b.S;
+        return a.S < b.S; // pnt is pair of coordinates(y, x)
     });
     db ans = DBL_MAX;
     set < pll > active;
@@ -11,7 +11,7 @@ db closest_pair() {
             active.erase(pnt[left++]);
         }
         auto it = active.lower_bound({pnt[i].F - ans, pnt[i].S - ans});
-        for(auto j = it; j != active.end() and pnt[i].F + ans >= j -> F; ++j) {
+        for(auto j = it; j != active.end() and pnt[i].F + ans >= j -> F; ++j) { 
             db cur = sqrt(pow(pnt[i].F - j -> F, 2.0) + pow(pnt[i].S - j -> S, 2.0));
             if (cur < ans) {
                 fir = pnt[i], sec = {j -> F, j -> S}; // closest_pair
