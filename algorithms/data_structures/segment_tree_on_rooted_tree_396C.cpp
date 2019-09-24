@@ -189,3 +189,11 @@ int main() {
     #endif
     return 0;
 }
+
+// more questions:
+
+// Q1   https://codeforces.com/contest/276/problem/E
+// Sol. https://codeforces.com/contest/276/submission/61238001
+
+// Q2   https://codeforces.com/contest/343/problem/D
+// Sol. https://codeforces.com/contest/343/submission/61197748
