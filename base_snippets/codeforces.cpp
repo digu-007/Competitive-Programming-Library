@@ -43,7 +43,6 @@ typedef pair < int, int > pii;
 typedef vector < ll > vll;
 typedef vector < int > vi;
 typedef complex < double > com;
-typedef gp_hash_table < int, int > fast;
 
 #define eb emplace_back
 #define pb push_back
