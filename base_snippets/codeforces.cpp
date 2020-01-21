@@ -11,8 +11,8 @@ NIT Hamirpur - INDIA
 using namespace std;
 using namespace __gnu_pbds;
 
-template < typename T > using ordered_set = tree < T, null_type, less < T >, rb_tree_tag, tree_order_statistics_node_update >;
-template < typename T > using MinPriorityQueue = priority_queue < T, vector < T >, greater < T > >;
+template<typename T> using ordered_set = tree <T, null_type, less <T>, rb_tree_tag, tree_order_statistics_node_update>;
+template<typename T> using MinPriorityQueue = priority_queue <T, vector <T>, greater <T>>;
 
 #ifdef HOME
 #define trace(...) __f(#__VA_ARGS__, __VA_ARGS__)
@@ -38,11 +38,11 @@ typedef double db;
 typedef long long ll;
 typedef unsigned long long ull;
 typedef long double ld;
-typedef pair < ll, ll > pll;
-typedef pair < int, int > pii;
-typedef vector < ll > vll;
-typedef vector < int > vi;
-typedef complex < double > com;
+typedef pair<ll, ll> pll;
+typedef pair<int, int> pii;
+typedef vector<ll> vll;
+typedef vector<int> vi;
+typedef complex<double> com;
 
 #define eb emplace_back
 #define pb push_back
@@ -53,13 +53,13 @@ typedef complex < double > com;
 #define unique_sort(x) (sort(x.begin(), x.end()), x.resize(distance(x.begin(), unique(x.begin(), x.end()))))
 #define fast_io() ios_base :: sync_with_stdio(0); cin.tie(0); cout.tie(0)
 
-const ll LINF = LLONG_MAX, base = 1e9, MOD = 1e9 + 7, N = 1e5 + 5, M = 1e3 + 5, LG = 20;
+const ll LINF = LLONG_MAX, SZ = 1e3, MOD = 1e9 + 7, N = 1e5 + 5, M = 1e3 + 5, LG = 20;
 const int INF = INT_MAX;
 const db PI = acos(-1), EPS = 1 / db(1e6);
 mt19937_64 rang(chrono::high_resolution_clock::now().time_since_epoch().count());
 
 void test() {
-
+    
 }
 
 int main() {
@@ -69,7 +69,11 @@ int main() {
         freopen("output.txt", "w", stdout);
     #endif
     cout << fixed << setprecision(15);
-    test();
+    int t;
+    // cin >> t;
+    for (int i = 0; i < t; ++i) {
+        test();
+    }
     #ifdef HOME
         cout << "Time: " << (int)(clock() * 1000. / CLOCKS_PER_SEC) << "ms";
     #endif
