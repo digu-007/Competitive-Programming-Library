@@ -59,7 +59,7 @@ const db PI = acos(-1), EPS = 1 / db(1e6);
 mt19937_64 rang(chrono::high_resolution_clock::now().time_since_epoch().count());
 
 void test() {
-    
+
 }
 
 int main() {
@@ -69,7 +69,7 @@ int main() {
         freopen("output.txt", "w", stdout);
     #endif
     cout << fixed << setprecision(15);
-    int t;
+    int t = 1;
     // cin >> t;
     for (int i = 0; i < t; ++i) {
         test();
