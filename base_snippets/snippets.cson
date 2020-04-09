@@ -1,0 +1,1924 @@
+'.source.cpp':
+    'BASE':
+        'prefix': 'BASE'
+        'body': """
+            /*
+            digu_J - Digvijay Janartha
+            NIT Hamirpur - INDIA
+            */
+
+            #include <bits/stdc++.h>
+            #include <ext/pb_ds/assoc_container.hpp>
+            #include <ext/pb_ds/tree_policy.hpp>
+            #pragma GCC optimize("O3")
+
+            using namespace std;
+            using namespace __gnu_pbds;
+
+            template<typename T> using ordered_set = tree <T, null_type, less <T>, rb_tree_tag, tree_order_statistics_node_update>;
+            template<typename T> using MinPriorityQueue = priority_queue <T, vector <T>, greater <T>>;
+
+            #ifdef HOME
+            #define trace(...) __f(#__VA_ARGS__, __VA_ARGS__)
+            template < typename Arg1 >
+            void __f(const char* name, Arg1&& arg1) {
+            	cout << name << " : " << arg1 << std :: endl;
+            }
+            template < typename Arg1, typename... Args >
+            void __f(const char* names, Arg1&& arg1, Args&&... args) {
+            	const char* comma = strchr(names + 1, ',');
+            	int len = comma - names;
+            	for (int i = 0; i < len; ++i) {
+            		cout << names[i];
+            	}
+            	cout <<  " : " << arg1 << " | ";
+            	__f(comma + 1, args...);
+            }
+            #else
+            #define trace(...)
+            #endif
+
+            typedef double db;
+            typedef long long ll;
+            typedef unsigned long long ull;
+            typedef long double ld;
+            typedef pair<ll, ll> pll;
+            typedef pair<int, int> pii;
+            typedef vector<ll> vll;
+            typedef vector<int> vi;
+            typedef complex<double> com;
+
+            #define eb emplace_back
+            #define pb push_back
+            #define F first
+            #define S second
+            #define all(x) (x).begin(), (x).end()
+            #define rall(x) (x).rbegin(), (x).rend()
+            #define unique_sort(x) (sort(x.begin(), x.end()), x.resize(distance(x.begin(), unique(x.begin(), x.end()))))
+            #define fast_io() ios_base :: sync_with_stdio(0); cin.tie(0); cout.tie(0)
+
+            const ll LINF = LLONG_MAX, SZ = 1e3, MOD = 1e9 + 7, N = 1e5 + 5, M = 1e3 + 5, LG = 21;
+            const int INF = INT_MAX;
+            const db PI = acos(-1), EPS = 1e-6;
+            mt19937_64 rang(chrono::high_resolution_clock::now().time_since_epoch().count());
+
+            void test() {
+                $1
+            }
+
+            int main() {
+                fast_io();
+                #ifdef HOME
+                    freopen("input.txt", "r", stdin);
+                    freopen("output.txt", "w", stdout);
+                #endif
+                cout << fixed << setprecision(15);
+                int t = 1;
+                // cin >> t;
+                for (int i = 0; i < t; ++i) {
+                    test();
+                }
+                #ifdef HOME
+                    cout << "Time: " << (int)(clock() * 1000. / CLOCKS_PER_SEC) << "ms";
+                #endif
+                return 0;
+            }"""
+
+    'EZ':
+        'prefix': 'EZ'
+        'body': """
+            #include <bits/stdc++.h>
+            using namespace std;
+
+            void test_case() {
+                $1
+            }
+
+            int main() {
+                ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+                #ifdef HOME
+                    freopen("input.txt", "r", stdin);
+                    freopen("output.txt", "w", stdout);
+                #endif
+                int t = 1;
+                // cin >> t;
+                for (int i = 0; i < t; ++i) {
+                    test_case();
+                }
+                return 0;
+            }"""
+
+    'GOOGLE':
+        'prefix': 'GOOGLE'
+        'body': """
+            /*
+            digu_J - Digvijay Janartha
+            NIT Hamirpur - INDIA
+            */
+
+            #include <bits/stdc++.h>
+            #include <ext/pb_ds/assoc_container.hpp>
+            #include <ext/pb_ds/tree_policy.hpp>
+            #pragma GCC optimize("O3")
+
+            using namespace std;
+            using namespace __gnu_pbds;
+
+            template<typename T> using ordered_set = tree <T, null_type, less <T>, rb_tree_tag, tree_order_statistics_node_update>;
+            template<typename T> using MinPriorityQueue = priority_queue <T, vector <T>, greater <T>>;
+
+            #ifdef HOME
+            #define trace(...) __f(#__VA_ARGS__, __VA_ARGS__)
+            template < typename Arg1 >
+            void __f(const char* name, Arg1&& arg1) {
+                cout << name << " : " << arg1 << std :: endl;
+            }
+            template < typename Arg1, typename... Args >
+            void __f(const char* names, Arg1&& arg1, Args&&... args) {
+                const char* comma = strchr(names + 1, ',');
+                int len = comma - names;
+                for (int i = 0; i < len; ++i) {
+                    cout << names[i];
+                }
+                cout <<  " : " << arg1 << " | ";
+                __f(comma + 1, args...);
+            }
+            #else
+            #define trace(...)
+            #endif
+
+            typedef double db;
+            typedef long long ll;
+            typedef unsigned long long ull;
+            typedef long double ld;
+            typedef pair<ll, ll> pll;
+            typedef pair<int, int> pii;
+            typedef vector<ll> vll;
+            typedef vector<int> vi;
+            typedef complex<double> com;
+
+            #define eb emplace_back
+            #define pb push_back
+            #define F first
+            #define S second
+            #define all(x) (x).begin(), (x).end()
+            #define rall(x) (x).rbegin(), (x).rend()
+            #define unique_sort(x) (sort(x.begin(), x.end()), x.resize(distance(x.begin(), unique(x.begin(), x.end()))))
+            #define fast_io() ios_base :: sync_with_stdio(0); cin.tie(0); cout.tie(0)
+
+            const ll LINF = LLONG_MAX, SZ = 1e3, MOD = 1e9 + 7, N = 1e5 + 5, M = 1e3 + 5, LG = 21;
+            const int INF = INT_MAX;
+            const db PI = acos(-1), EPS = 1e-6;
+            mt19937_64 rang(chrono::high_resolution_clock::now().time_since_epoch().count());
+
+            void test() {
+                $1
+            }
+
+            int main() {
+                fast_io();
+                #ifdef HOME
+                    freopen("input.txt", "r", stdin);
+                    freopen("output.txt", "w", stdout);
+                #endif
+                cout << fixed << setprecision(15);
+                int t = 1;
+                cin >> t;
+                for (int i = 0; i < t; ++i) {
+                    cout << "Case #" << i + 1 << ": ";
+                    test();
+                }
+                #ifdef HOME
+                    cout << "Time: " << (int)(clock() * 1000. / CLOCKS_PER_SEC) << "ms";
+                #endif
+                return 0;
+            }"""
+
+    'NCR':
+        'prefix': 'NCR'
+        'body': """
+            void precompute(int n) {
+                fact[0] = 1;
+                for (int i = 1; i <= n; ++i) {
+                    fact[i] = mul(i, fact[i - 1]);
+                }
+                invfact[n] = inv(fact[n]);
+                for (int i = n - 1; i >= 0; --i) {
+                    invfact[i] = mul(invfact[i + 1], i + 1);
+                }
+            }
+
+            int ncr(int a, int b) {
+                if (b > a) {
+                    return 0;
+                }
+                int ans = fact[a];
+                ans = mul(ans, inv(mul(fact[b], fact[a - b])));
+                return ans;
+            }"""
+
+    'PRIME':
+        'prefix': 'PRIME'
+        'body': """
+            bool is_prime(ll a) {
+                if (a < 2) {
+                    return false;
+                } else if (a == 2) {
+                    return true;
+                }
+                if (a % 2 == 0) {
+                    return false;
+                }
+                for (ll i = 3; i <= sqrt(a); i += 2) {
+                    if (a % i == 0) {
+                        return false;
+                    }
+                }
+                return true;
+            }"""
+
+    'SIEVE':
+        'prefix': 'SIEVE'
+        'body': """
+            void sieve() {
+                for (int i = 0; i < N; ++i) {
+                    prime[i] = true;
+                }
+                prime[0] = prime[1] = false;
+                for (int i = 2; i * i < N; ++i) {
+                     if (prime[i]) {
+                         for (int j = i * i; j < N; j += i) {
+                             prime[j] = false;
+                         }
+                    }
+                }
+            }"""
+
+    'PHI':
+        'prefix': 'PHI'
+        'body': """
+            ll phi(ll n) {
+                ll ans = n;
+                for (ll i = 2; i * i <= n; ++i) {
+                    if (!(n % i)) {
+                        while (!(n % i)) {
+                            n /= i;
+                        }
+                        ans -= ans / i;
+                    }
+                }
+                if (n > 1) {
+                    ans -= ans / n;
+                }
+                return ans;
+            }"""
+
+    'TOTIENT':
+        'prefix': 'TOTIENT'
+        'body': """
+            void totient(ll n) {
+                for (int i = 1; i <= n; ++i) {
+                    phi[i] = i;
+                }
+                for (int i = 2; i <= n; ++i) {
+                    if (phi[i] == i) {
+                        for (int j = i; j <= n; j += i) {
+                            phi[j] /= i;
+                            phi[j] *= (i - 1);
+                        }
+                    }
+                }
+            }"""
+
+    'EXT':
+        'prefix': 'EXT'
+        'body': """
+            ll ext_gcd(ll a, ll b, ll &x, ll &y) {
+                if (!a) {
+                    x = 0;
+                    y = 1;
+                    return b;
+                }
+                ll x1, y1;
+                ll d = ext_gcd(b % a, a, x1, y1);
+                x = y1 - (b / a) * x1;
+                y = x1;
+                return d;
+            }"""
+
+    'DIO':
+        'prefix': 'DIO'
+        'body': """
+            bool check_diophantine(ll a, ll b, ll c, ll &x0, ll &y0, ll &g) {
+                g = ext_gcd(abs(a), abs(b), x0, y0);
+                if (c % g) {
+                    return false;
+                }
+                x0 *= c / g;
+                y0 *= c / g;
+                if (a < 0) {
+                    x0 *= -1;
+                }
+                if (b < 0) {
+                    y0 *= -1;
+                }
+                return true;
+            }"""
+
+    'DIO_NON_NEG':
+        'prefix': 'DIO_NON_NEG'
+        'body': """
+            bool check_non_negative_solution_diophantine(ll a, ll b, ll c, ll &x0, ll &y0, ll &g) {
+                g = ext_gcd(abs(a), abs(b), x0, y0);
+                if (c % g) {
+                    return false;
+                }
+                x0 *= c / g;
+                y0 *= c / g;
+                if (x0 < 0 && y0 < 0) {
+                    return false;
+                } else if (x0 < 0) {
+                    ll k = -x0 * g / b;
+                    if (k * b / g + x0 < 0 && ((k + 1) * b / g + x0 < 0 || y0 - (k + 1) * a / g < 0)) {
+                        return false;
+                    }
+                } else if (y0 < 0) {
+                    ll k = y0 * g / a;
+                    if (y0 - k * a / g < 0 && (y0 - (k - 1) * a / g < 0 || (k - 1) * b / g + x0 < 0)) {
+                        return false;
+                    }
+                }
+                if (a < 0) {
+                    x0 *= -1;
+                }
+                if (b < 0) {
+                    y0 *= -1;
+                }
+                return true;
+            }"""
+
+    'COMB':
+        'prefix': 'COMB'
+        'body': """
+            void store_combination(ll n) {
+                combination[0] = 1;
+                for (ll i = 1; i <= n; ++i) {
+                    combination[i] = (combination[i - 1] * (n - i + 1)) % MOD;
+                    combination[i] = (combination[i] * mod_exp(i, MOD - 2, MOD)) % MOD;
+                }
+            }"""
+
+    'OVERFLOW_LCM':
+        'prefix': 'OVERFLOW_LCM'
+        'body': """
+            bool solve_overflow() {
+                ll temp = 1;
+                for (ll i = 0; i < n; ++i) {
+                    temp = __gcd(k, lcm(temp, a[i]));
+                }
+                if (temp == k) {
+                    return true;
+                }
+                return false;
+            }"""
+
+    'DIJKSTRA':
+        'prefix': 'DIJKSTRA'
+        'body': """
+            void dijkstra(int s) {
+                fill(d, d + n + 1, LINF);
+                fill(p, p + n + 1, -1);
+                d[s] = 0;
+                priority_queue < pair < ll, int >, vector < pair < ll, int > >, greater < pair < ll, int > > > pq;
+                pq.push({0, s});
+                while (!pq.empty()) {
+                    int v = pq.top().S;
+                    int d_v = pq.top().F;
+                    pq.pop();
+                    if (d_v != d[v]) {
+                        continue;
+                    }
+                    for (auto x: g[v]) {
+                        if (d[v] + x.S < d[x.F]) {
+                            d[x.F] = d[v] + x.S;
+                            p[x.F] = v;
+                            pq.push({d[x.F], x.F});
+                        }
+                    }
+                }
+            }"""
+
+    'SHORT':
+        'prefix': 'SHORT'
+        'body': """
+            void shortest_path(int sor, int des) {
+                if (d[des] == INF) {
+                    cout << "-1";
+                    return;
+                }
+                vi ans;
+                for (int i = des; i != sor; i = p[i]) {
+                    ans.eb(i);
+                }
+                ans.eb(sor);
+                reverse(all(ans));
+                for (auto x: ans) {
+                    cout << x << " ";
+                }
+            }"""
+
+    'BFS':
+        'prefix': 'BFS'
+        'body': """
+            void bfs(int s) {
+                queue < int > q;
+                q.push(s);
+                vis[s] = true;
+                while (!q.empty()) {
+                    int v = q.front();
+                    q.pop();
+                    for (auto &x: g[v]) {
+                        if (!vis[x]) {
+                            vis[x] = true;
+                            q.push(x);
+                        }
+                    }
+                }
+            }"""
+
+    'BFS_01':
+        'prefix': 'BFS_01'
+        'body': """
+            void bfs_01(int s) {
+                fill(d, d + n + 1, INF);
+                d[s] = 0;
+                deque < int > dq;
+                dq.push_front(s);
+                while (dq.size()) {
+                    int v = dq.front();
+                    dq.pop_front();
+                    for (auto &x: g[v]) {
+                        if (d[v] + x.S < d[x.F]) {
+                            d[x.F] = x.S + d[v];
+                            if (x.S) {
+                                dq.pb(x.F);
+                            } else {
+                                dq.push_front(x.F);
+                            }
+                        }
+                    }
+                }
+            }"""
+
+
+    'MATRIX':
+        'prefix': 'MATRIX'
+        'body': """
+            struct Matrix {
+        	vector < vector < int > > arr;
+        	int rows, cols;
+
+        	Matrix(int n, int m) {
+        		rows = n;
+        		cols = m;
+        		arr.assign(n, vector < int >(m));
+        	}
+
+        	void makeIdentical() {
+        		for (int i = 0; i < rows; ++i) {
+        			for (int j = 0; j < cols; ++j) {
+        				if (i == j) {
+        					arr[i][j] = 1;
+        				} else {
+        					arr[i][j] = 0;
+        				}
+        			}
+        		}
+        	}
+
+        	inline int add(int a, int b) {
+        		int c = a + b;
+        		if (c >= MOD) {
+        			c -= MOD;
+        		}
+        		return c;
+        	}
+
+        	inline int mul(int a, int b) {
+        		ll c = 1ll * a * b;
+        		if (c >= MOD) {
+        			c %= MOD;
+        		}
+        		return c;
+        	}
+
+        	Matrix operator +(const Matrix &o) {
+        		assert(rows == o.rows && cols == o.cols);
+        		Matrix res(rows, cols);
+        		for (int i = 0; i < rows; ++i) {
+        			for (int j = 0; j < cols; ++j) {
+        				res.arr[i][j] = add(arr[i][j], o.arr[i][j]);
+        			}
+        		}
+        		return res;
+        	}
+
+        	Matrix operator *(const Matrix &o) {
+        		assert(cols == o.rows);
+        		Matrix res(rows, o.cols);
+        		for (int i = 0; i < rows; ++i) {
+        			for (int j = 0; j < o.cols; ++j) {
+        				for (int k = 0; k < cols; ++k) {
+        					res.arr[i][j] = add(res.arr[i][j], mul(arr[i][k], o.arr[k][j]));
+        				}
+        			}
+        		}
+        		return res;
+        	}
+
+        	Matrix power(ll p) {
+        		assert(rows == cols);
+        		Matrix o = (*this);
+        		Matrix res(rows, cols);
+        		res.makeIdentical();
+        		while (p) {
+        			if (p & 1) {
+        				res = res * o;
+        			}
+        			o = o * o;
+        			p >>= 1;
+        		}
+        		return res;
+        	}
+        };"""
+
+    'MODULAR':
+        'prefix': 'MODULAR'
+        'body': """
+            namespace ModFunctions {
+            	inline int add(int a, int b) {
+            		a += b;
+            		if (a >= MOD) {
+            			a -= MOD;
+            		}
+                    return a;
+            	}
+
+            	inline int sub(int a, int b) {
+            		a -= b;
+            		if (a < 0) {
+            			a += MOD;
+            		}
+                    return a;
+            	}
+
+            	inline int mul(int a, int b) {
+            		return int((1ll * a * b) % MOD);
+            	}
+
+            	inline int power(int a, ll b) {
+            		int res = 1;
+            		while (b > 0) {
+            			if (b & 1) {
+            				res = mul(res, a);
+            			}
+            			a = mul(a, a);
+            			b >>= 1;
+            		}
+            		return res;
+            	}
+
+            	inline int inv(int a) {
+            		a %= MOD;
+            		if (a < 0) {
+            			a += MOD;
+            		}
+            		int b = MOD, u = 0, v = 1;
+            		while (a) {
+            			int t = b / a;
+            			b -= t * a;
+            			swap(a, b);
+            			u -= t * v;
+            			swap(u, v);
+            		}
+            		assert(b == 1);
+            		if (u < 0) {
+            			u += MOD;
+            		}
+            		return u;
+            	}
+            }
+
+            using namespace ModFunctions;"""
+
+    'KMP':
+        'prefix': 'KMP'
+        'body': """
+            vector < int > KMP(string s) {
+                int n = s.size();
+                vector < int > pi(n);
+                for (int i = 1; i < n; ++i) {
+                    int j = pi[i - 1];
+                    while (j > 0 and s[i] != s[j]) {
+                        j = pi[j - 1];
+                    }
+                    j += (s[i] == s[j]);
+                    pi[i] = j;
+                }
+                return pi;
+            }"""
+
+    'BIT':
+        'prefix': 'BIT'
+        'body': """
+            void update(int x, int y) {
+                for (; x < N; x = x | (x + 1)) {
+                    bit[x] += y;
+                }
+            }
+
+            ll sum(int x) {
+                ll ans = 0;
+                for (; x >= 0; x = (x & (x + 1)) - 1) {
+                    ans += bit[x];
+                }
+                return ans;
+            }"""
+
+    'SEG':
+        'prefix': 'SEG'
+        'body': """
+            void build(int v, int tl, int tr) {
+                if (tl == tr) {
+                    t[v] = a[tl];
+                } else {
+                    int tm = (tr + tl) / 2, u = 2 * v;
+                    build(u, tl, tm);
+                    build(u + 1, tm + 1, tr);
+                    t[v] = t[u] + t[u + 1];
+                }
+            }
+
+            int query(int v, int tl, int tr, int l, int r) {
+                if (tl > r or tr < l) {
+                    return 0;
+                }
+                if (l <= tl and r >= tr) {
+                    return t[v];
+                }
+                int tm = (tl + tr) / 2, u = 2 * v;
+                return query(u, tl, tm, l, r) + query(u + 1, tm + 1, tr, l, r);
+            }
+
+            void update(int v, int tl, int tr, int pos, int val) {
+                if (tl == tr) {
+                    t[v] = val;
+                } else {
+                    int tm = (tl + tr) / 2, u = 2 * v;
+                    if (pos > tm) {
+                        update(u + 1, tm + 1, tr, pos, val);
+                    } else {
+                        update(u, tl, tm, pos, val);
+                    }
+                    t[v] = t[u] + t[u + 1];
+                }
+            }"""
+
+    'DSU':
+        'prefix': 'DSU'
+        'body': """
+            int find_set(int v) {
+                return (v == p[v] ? v : p[v] = find_set(p[v]));
+            }
+
+            void union_sets(int a, int b) {
+                a = find_set(a);
+                b = find_set(b);
+                if (a != b) {
+                    if (sz[a] < sz[b]) {
+                        swap(a, b);
+                    }
+                    p[b] = a;
+                    sz[a] += sz[b];
+                }
+            }"""
+
+    'LCA':
+        'prefix': 'LCA'
+        'body': """
+
+            void dfs(int s, int p) {
+                tin[s] = ++timer;
+                up[s][0] = p;
+                for (int i = 1; i <= lg; ++i) {
+                    up[s][i] = up[up[s][i - 1]][i - 1];
+                }
+                for (auto &x: g[s]) {
+                    if (x.F != p) {
+                        pre[x.F] = pre[s] + ll(x.S);
+                        dfs(x.F, s);
+                    }
+                }
+                tout[s] = ++timer;
+            }
+
+            bool is_ancestor(int u, int v) {
+                return tin[u] <= tin[v] and tout[u] >= tout[v];
+            }
+
+            int lca(int u, int v) {
+                if (is_ancestor(u, v)) {
+                    return u;
+                }
+                if (is_ancestor(v, u)) {
+                    return v;
+                }
+                for (int i = lg; i >= 0; --i) {
+                    if (!is_ancestor(up[u][i], v)) {
+                        u = up[u][i];
+                    }
+                }
+                return up[u][0];
+            }
+
+            ll dist(int u, int v) {
+                return pre[u] + pre[v] - 2 * pre[lca(u, v)];
+            }
+
+            void binary_lifting(int root) {
+                lg = ceil(log2(n + 1));
+                up.resize(n + 1);
+                for (int i = 0; i <= n; ++i) {
+                    up[i].resize(lg + 1);
+                }
+                dfs(root, root);
+            }"""
+
+    'BINARY':
+        'prefix': 'BINARY'
+        'body': """
+            string binary(int x) {
+                string ans;
+                while (x) {
+                    if (x & 1) {
+                        ans += '1';
+                    } else {
+                        ans += '0';
+                    }
+                    x /= 2;
+                }
+                reverse(all(ans));
+                return ans;
+            }"""
+
+    'PRIME_FACTORIZATION':
+        'prefix': 'PRIME_FACTORIZATION'
+        'body': """
+            void prime_factorization() {
+                for (int i = 2; i < N; ++i) {
+                    if (prime[i].empty()) {
+                        for (int j = i; j < N; j += i) {
+                            prime[j].eb(i);
+                        }
+                    }
+                }
+            }"""
+
+    'TRIE':
+        'prefix': 'TRIE'
+        'body': """
+            struct trie {
+                trie* next[2];
+                int cnt = 0;
+            };
+
+            trie* head;
+
+            void add(int x) {
+                trie* cur = head;
+                for (int i = N; i >= 0; --i) {
+                    bool bit = (x >> i) & 1;
+                    if (cur -> next[bit] == NULL) {
+                        cur -> next[bit] = new trie();
+                    }
+                    cur = cur -> next[bit];
+                    ++cur -> cnt;
+                }
+            }
+
+            void remove(int x) {
+                trie* cur = head;
+                for (int i = N; i >= 0; --i) {
+                    bool bit = (x >> i) & 1;
+                    cur = cur -> next[bit];
+                    --cur -> cnt;
+                }
+            }
+
+            int query(int x) {
+                trie* cur = head;
+                int ans = 0;
+                for (int i = N; i >= 0; --i) {
+                    bool bit = !((x >> i) & 1);
+                    if (cur -> next[bit] and cur -> next[bit] -> cnt) {
+                        ans += (1 << i);
+                        cur = cur -> next[bit];
+                    } else {
+                        cur = cur -> next[!bit];
+                    }
+                }
+                return ans;
+            }"""
+
+    'DSU_ON_TREES':
+        'prefix': 'DSU_ON_TREES'
+        'body': """
+            void get_size(int s, int p) {
+                sz[s] = 1;
+                for (auto &x: g[s]) {
+                    if (x != p) {
+                        get_size(x, s);
+                        sz[s] += sz[x];
+                    }
+                }
+            }
+
+            void dfs(int s, int p, int keep) {
+                int mx = -1, big_child = -1;
+                for (auto &x: g[s]) {
+                    if (x != p and sz[x] > mx) {
+                        mx = sz[x], big_child = x;
+                    }
+                }
+                for (auto &x: g[s]) {
+                    if (x != p and x != big_child) {
+                        dfs(x, s, 0);
+                    }
+                }
+                if (big_child != -1) {
+                    dfs(big_child, s, 1);
+                    big[big_child] = true;
+                }
+                dfs2(s, p, 1);
+                ans[s] = sum[*cur_cnt.rbegin()];
+                if (big_child != -1) {
+                    big[big_child] = false;
+                }
+                if (!keep) {
+                    dfs2(s, p, -1);
+                }
+            }
+
+            void dfs2(int s, int p, int val) {
+                cur_cnt.erase(cnt[c[s]]);
+            	sum[cnt[c[s]]] -= c[s];
+            	cnt[c[s]] += val;
+            	cur_cnt.insert(cnt[c[s]]);
+            	sum[cnt[c[s]]] += c[s];
+                for (auto &x: g[s]) {
+                    if (x != p and !big[x]) {
+                        dfs2(x, s, val);
+                    }
+                }
+            }"""
+
+    'KTH_ANCESTOR':
+        'prefix': 'KTH_ANCESTOR'
+        'body': """
+            void dfs(int s, int p) {
+                for (auto &x: g[s]) {
+                    if (x != p) {
+                        dfs(x, s);
+                        dp[x][0] = s;
+                    }
+                }
+            }
+
+            void build(int root) {
+                dfs(root, 0);
+                for (int j = 1; j < LG; ++j) {
+                    for (int i = 1; i <= n; ++i) {
+                        dp[i][j] = dp[dp[i][j - 1]][j - 1];
+                    }
+                }
+            }
+
+            int kth(int s, int k) {
+                for (int i = LG - 1; i >= 0; --i) {
+                    if ((1 << i) <= k) {
+                        s = dp[s][i];
+                        k -= (1 << i);
+                    }
+                }
+                return s;
+            }"""
+
+    'SUM_BIG':
+        'prefix': 'SUM_BIG'
+        'body': """
+            void solve(string a, string b) {
+                while (a.size() != b.size()) {
+                    if (b.size() > a.size()) {
+                        a = '0' + a;
+                    } else {
+                        b = '0' + b;
+                    }
+                }
+                int sz = a.size(), car = 0;
+                for (int i = sz - 1; i >= 0; --i) {
+                    int temp = a[i] + b[i] - 2 * '0' + car;
+                    car = temp / 10;
+                    ans += char(temp % 10 + '0');
+                }
+                if (car) {
+                    ans += char(car + '0');
+                }
+                reverse(all(ans));
+            }"""
+
+    'CLOSEST_PAIR':
+        'prefix': 'CLOSEST_PAIR'
+        'body': """
+            db closest_pair() {
+                sort(pnt, pnt + n, [&](pll a, pll b) {
+            		return a.S < b.S;
+            	});
+                db ans = DBL_MAX;
+                set < pll > active;
+                active.emplace(pnt[0]);
+                int left = 0;
+                for (int i = 1; i < n; ++i) {
+                    while (left < i and pnt[i].S - pnt[left].S > ans) {
+                        active.erase(pnt[left++]);
+                    }
+                    auto it = active.lower_bound({pnt[i].F - ans, pnt[i].S - ans});
+                    for(auto j = it; j != active.end() and pnt[i].F + ans >= j -> F; ++j) {
+                        db cur = sqrt(pow(pnt[i].F - j -> F, 2.0) + pow(pnt[i].S - j -> S, 2.0));
+                        if (cur < ans) {
+                            fir = pnt[i], sec = {j -> F, j -> S};
+                            ans = cur;
+                        }
+                    }
+                   active.emplace(pnt[i]);
+                }
+                return ans;
+            }"""
+
+    'RANDOM':
+        'prefix': 'RANDOM'
+        'body': """
+            ll my_rand(ll l, ll r) {
+                if (l > r) {
+                    swap(l, r);
+                }
+            	uniform_int_distribution < int > uid(l, r);
+            	return uid(rang);
+            }"""
+
+    'RMQ_LAZY':
+        'prefix': 'RMQ_LAZY'
+        'body': """
+            void push(int v) {
+                int u = 2 * v;
+                t[u] += lazy[v];
+                lazy[u] += lazy[v];
+                t[u + 1] += lazy[v];
+                lazy[u + 1] += lazy[v];
+                lazy[v] = 0;
+            }
+
+            void build(int v, int tl, int tr) {
+                if (tl == tr) {
+                    t[v] = a[tl];
+                } else {
+                    int tm = (tr + tl) / 2, u = 2 * v;
+                    build(u, tl, tm);
+                    build(u + 1, tm + 1, tr);
+                    t[v] = min(t[u], t[u + 1]);
+                }
+            }
+
+            ll query(int v, int tl, int tr, int l, int r) {
+                if (tl > r or tr < l) {
+                    return LINF;
+                }
+                if (l <= tl and r >= tr) {
+                    return t[v];
+                }
+                push(v);
+                int tm = (tl + tr) / 2, u = 2 * v;
+                return min(query(u, tl, tm, l, r), query(u + 1, tm + 1, tr, l, r));
+            }
+
+            void update(int v, int tl, int tr, int l, int r, ll val) {
+                if (l > r) {
+                    return;
+                }
+                if (tl == l and tr == r) {
+                    t[v] += val;
+                    lazy[v] += val;
+                } else {
+                    push(v);
+                    int tm = (tl + tr) / 2, u = 2 * v;
+                    update(u, tl, tm, l, min(r, tm) ,val);
+                    update(u + 1, tm + 1, tr, max(l, tm + 1), r, val);
+                    t[v] = min(t[u], t[u + 1]);
+                }
+            }"""
+
+    'HLD':
+        'prefix': 'HLD'
+        'body': """
+            void dfs(int s, int par, int lvl) {
+                up[s][0] = par;
+                level[s] = lvl;
+                sz[s] = 1;
+                for (auto &x: g[s]) {
+                    if (x.ver != par) {
+                        other_end[x.idx] = x.ver;
+                        dfs(x.ver, s, lvl + 1);
+                        sz[s] += sz[x.ver];
+                    }
+                }
+            }
+
+            int lca(int u, int v) {
+                if (level[u] < level[v]) {
+                    swap(u, v);
+                }
+                int diff = level[u] - level[v];
+                for (int j = 0; j < LG; ++j) {
+                    if ((diff >> j) & 1) {
+                        u = up[u][j];
+                    }
+                }
+                if (u == v) {
+                    return u;
+                }
+                for (int j = LG - 1; j >= 0; --j) {
+                    if (up[u][j] != up[v][j]) {
+                        u = up[u][j], v = up[v][j];
+                    }
+                }
+                return up[u][0];
+            }
+
+            void hld(int s, int cur, int par) {
+                if (head[num] == -1) {
+                    head[num] = s;
+                }
+                chain[s] = num;
+                pos[s] = ptr;
+                base[ptr++] = cur;
+                int special = -1, new_cost = 0;
+                for (auto &x: g[s]) {
+                    if (x.ver != par) {
+                        if (special == -1 or sz[special] < sz[x.ver]) {
+                            special = x.ver;
+                            new_cost = x.cost;
+                        }
+                    }
+                }
+                if (special != -1) {
+                    hld(special, new_cost, s);
+                }
+                for (auto &x: g[s]) {
+                    if (x.ver != par and x.ver != special) {
+                        ++num;
+                        hld(x.ver, x.cost, s);
+                    }
+                }
+            }
+
+            void build(int u, int l, int r) {
+                if (r - l == 1) {
+                    t[u] = base[l];
+                    return;
+                }
+                int v = (u << 1), tm = (r + l) >> 1;
+                build(v, l, tm);
+                build(v | 1, tm, r);
+                t[u] = max(t[v], t[v | 1]);
+            }
+
+            void update(int u, int l, int r, int x, int val) {
+                if (l > x or r <= x) {
+                    return;
+                }
+                if (l == x and r - l == 1) {
+                    t[u] = val;
+                    return;
+                }
+                int v = (u << 1), tm = (r + l) >> 1;
+                update(v, l, tm, x, val);
+                update(v | 1, tm, r, x, val);
+                t[u] = max(t[v], t[v | 1]);
+            }
+
+            int query_up(int u, int v) {
+                if (u == v) {
+                    return 0;
+                }
+                int uchain, vchain = chain[v], ans = -1;
+                while (true) {
+                    uchain = chain[u];
+                    if (uchain == vchain) {
+                        if (u == v) {
+                            break;
+                        }
+                        query(1, 0, ptr, pos[v] + 1, pos[u] + 1);
+                        ans = max(ans, qt[1]);
+                        break;
+                    }
+                    query(1, 0, ptr, pos[head[uchain]], pos[u] + 1);
+                    ans = max(ans, qt[1]);
+                    u = head[uchain];
+                    u = up[u][0];
+                }
+                return ans;
+            }
+
+            void query(int u, int l, int r, int tl, int tr) {
+                if (l >= tr or r <= tl) {
+                    qt[u] = -1;
+                    return;
+                }
+                if (l >= tl and r <= tr) {
+                    qt[u] = t[u];
+                    return;
+                }
+                int v = (u << 1), tm = (r + l) >> 1;
+                query(v, l, tm, tl, tr);
+                query(v | 1, tm, r, tl, tr);
+                qt[u] = max(qt[v], qt[v | 1]);
+            }"""
+
+    'LIFT':
+        'prefix': 'LIFT'
+        'body': """
+            int lca(int u, int v) {
+            	if (level[u] < level[v]) {
+                    swap(u, v);
+                }
+                int diff = level[u] - level[v];
+                for (int j = 0; j < LG; ++j) {
+                    if ((diff >> j) & 1) {
+                        u = up[u][j];
+                    }
+                }
+                if (u == v) {
+                    return u;
+                }
+                for (int j = LG - 1; j >= 0; --j) {
+                    if (up[u][j] != up[v][j]) {
+                        u = up[u][j], v = up[v][j];
+                    }
+                }
+                return up[u][0];
+            }"""
+
+    'TRIE_ARRAY':
+        'prefix': 'TRIE_ARRAY'
+        'body': """
+            void add() {
+                int n = s.size(), u = 0;
+                for (int i = 0; i < n; ++i) {
+                    int bit = s[i] - 'a';
+                    if (trie[u][bit] == -1) {
+                        trie[u][bit] = ++val;
+                    }
+                    u = trie[u][bit];
+                }
+                last[u] = true;
+            }
+
+            bool query(int idx, int u, bool differ) {
+                int n = s.size();
+                if (idx == n) {
+                    if (differ and last[u]) {
+                        return true;
+                    }
+                    return false;
+                }
+                int bit = s[idx] - 'a';
+                if (differ) {
+                    return query(idx + 1, trie[u][bit], differ);
+                }
+                bool ans = false;
+                for (int i = 0; i < 3; ++i) {
+                    if (trie[u][i] > -1) {
+                        if (bit == i) {
+                            ans |= query(idx + 1, trie[u][i], differ);
+                        } else {
+                            ans |= query(idx + 1, trie[u][i], !differ);
+                        }
+                    }
+                }
+                return ans;
+            }"""
+
+    'FFT':
+        'prefix': 'FFT'
+        'body': """
+            const int Maxb = 19, Maxp = 450;
+
+            vll rev;
+            vector<com> omega;
+
+            void calc_rev(int n, int log_n) {
+            	omega.assign(n, 0);
+            	rev.assign(n, 0);
+            	for (int i = 0; i < n; ++i) {
+            		rev[i] = 0;
+            		for (int j = 0; j < log_n; ++j) {
+            			if ((i >> j) & 1) {
+                            rev[i] |= 1 << (log_n - j - 1);
+                        }
+            		}
+            	}
+            }
+
+            void fft(vector < com > &A, int n, bool invert) {
+            	for (int i = 0; i < n; ++i) {
+            		if (i < rev[i]) {
+                        swap(A[i], A[rev[i]]);
+                    }
+            	}
+            	for (int len = 2; len <= n; len <<= 1) {
+            		double ang = 2 * PI / len * (invert ? -1 : 1);
+            		int half = (len >> 1);
+            		com cc(cos(ang), sin(ang));
+            		omega[0] = com(1, 0);
+            		for (int i = 1; i < half; ++i) {
+                        omega[i] = omega[i - 1] * cc;
+                    }
+            		for (int i = 0; i < n; i += len) {
+            			com t;
+            			int pu = i, pv = i + half, pu_end = i + half, pw = 0;
+            			for (; pu != pu_end; ++pu, ++pv, ++pw) {
+            				t = A[pv] * omega[pw];
+            				A[pv] = A[pu] - t;
+            				A[pu] += t;
+            			}
+            		}
+            	}
+            	if (invert) {
+                    for(int i = 0; i < n; ++i) {
+                        A[i] /= n;
+                    }
+                }
+            }
+
+            void multiply(int n, vector < com > &A, vector < com > &B, vll &C) {
+            	fft(A, n, false);
+            	fft(B, n, false);
+            	for (int i = 0; i < n; ++i) {
+                    A[i] *= B[i];
+                }
+            	fft(A, n, true);
+            	for (int i = 0; i < n; ++i) {
+            		C[i] = (int)(A[i].real() + 0.5);
+            	}
+            }
+
+            void solve(int n, vll &coeffA, vll &coeffB, vll &result) {
+            	vector<com> A(n), B(n);
+            	for (int i = 0; i < n; ++i)	{
+            		A[i] = coeffA[i];
+            		B[i] = 0;
+            	}
+            	for (int i = 0; i < n; ++i) {
+            		B[i] = coeffB[i];
+            	}
+            	vll C(n);
+            	multiply(n, A, B, C);
+            	for (int i = 0; i < n; ++i) {
+            		int add = C[i];
+            		result[i] += add;
+            	}
+            }
+
+            void do_FFT(vll &A, vll &B, vll &result) {
+            	int n = 1, bits = 0;
+            	while (n < 2 * A.size() or n < 2 * B.size()) {
+                    n <<= 1, ++bits;
+                }
+            	result.assign(n, 0);
+            	calc_rev(n, bits);
+            	vll tempA(A.begin(), A.end());
+            	vll tempB(B.begin(), B.end());
+            	tempA.resize(n);
+            	tempB.resize(n);
+                solve(n, tempA, tempB, result);
+            }"""
+
+    'FFT_MOD':
+        'prefix': 'FFT_MOD'
+        'body': """
+            const int Maxb = 19, Maxp = 450;
+
+            vll rev;
+            vector<com> omega;
+
+            void calc_rev(int n, int log_n) {
+            	omega.assign(n, 0);
+            	rev.assign(n, 0);
+            	for (int i = 0; i < n; ++i) {
+            		rev[i] = 0;
+            		for (int j = 0; j < log_n; ++j) {
+            			if ((i >> j) & 1) {
+                            rev[i] |= 1 << (log_n - j - 1);
+                        }
+            		}
+            	}
+            }
+
+            void fft(vector < com > &A, int n, bool invert) {
+            	for (int i = 0; i < n; ++i) {
+            		if (i < rev[i]) {
+                        swap(A[i], A[rev[i]]);
+                    }
+            	}
+            	for (int len = 2; len <= n; len <<= 1) {
+            		double ang = 2 * PI / len * (invert ? -1 : 1);
+            		int half = (len >> 1);
+            		com cc(cos(ang), sin(ang));
+            		omega[0] = com(1, 0);
+            		for (int i = 1; i < half; ++i) {
+                        omega[i] = omega[i - 1] * cc;
+                    }
+            		for (int i = 0; i < n; i += len) {
+            			com t;
+            			int pu = i, pv = i + half, pu_end = i + half, pw = 0;
+            			for (; pu != pu_end; ++pu, ++pv, ++pw) {
+            				t = A[pv] * omega[pw];
+            				A[pv] = A[pu] - t;
+            				A[pu] += t;
+            			}
+            		}
+            	}
+            	if (invert) {
+                    for(int i = 0; i < n; ++i) {
+                        A[i] /= n;
+                    }
+                }
+            }
+
+            void multiply(int n, vector < com > &A, vector < com > &B, vll &C) {
+            	fft(A, n, false);
+            	fft(B, n, false);
+            	for (int i = 0; i < n; ++i) {
+                    A[i] *= B[i];
+                }
+            	fft(A, n, true);
+            	for (int i = 0; i < n; ++i) {
+            		C[i] = (int)(A[i].real() + 0.5);
+            		C[i] %= MOD;
+            	}
+            }
+
+            void solve(int n, vll &coeffA, vll &coeffB, vll &result, bool big1, bool big2) {
+            	vector<com> A(n), B(n);
+            	for (int i = 0; i < n; ++i)	{
+            		A[i] = big1 ? coeffA[i] / Maxp : coeffA[i] % Maxp;
+            		B[i] = 0;
+            	}
+            	for (int i = 0; i < n; ++i) {
+            		B[i] = big2 ? coeffB[i] / Maxp : coeffB[i] % Maxp;
+            	}
+            	vll C(n);
+            	multiply(n, A, B, C);
+            	for (int i = 0; i < n; ++i) {
+            		int add = C[i];
+            		if (big1) {
+                        add *= Maxp;
+                    }
+            		if (big2) {
+                        add *= Maxp;
+                    }
+            		add %= MOD;
+            		result[i] += add;
+            		result[i] %= MOD;
+            	}
+            }
+
+            void do_FFT(vll &A, vll &B, vll &result) {
+            	int n = 1, bits = 0;
+            	while (n < 2 * A.size() or n < 2 * B.size()) {
+                    n <<= 1, ++bits;
+                }
+            	result.assign(n, 0);
+            	calc_rev(n, bits);
+            	vll tempA(A.begin(), A.end());
+            	vll tempB(B.begin(), B.end());
+            	tempA.resize(n);
+            	tempB.resize(n);
+            	for (int i = 0; i < 2; ++i) {
+            		for (int j = 0; j < 2; ++j) {
+            			solve(n, tempA, tempB, result, i, j);
+            		}
+            	}
+            }"""
+
+    'TOPSORT':
+        'prefix': 'TOPSORT'
+        'body': """
+            bool topsort() {
+                int indeg[n + 1] = {0};
+                for (int i = 1; i <= n; ++i) {
+                    for (auto &x: g[i]) {
+                        ++indeg[x];
+                    }
+                }
+                MinPriorityQueue < int > pq;
+                for (int i = 1; i <= n; ++i) {
+                    if (!indeg[i]) {
+                        pq.push(i);
+                    }
+                }
+                while (pq.size()) {
+            		int u = pq.top();
+            		pq.pop();
+            		order.eb(u);
+            		for (auto &v: g[u]) {
+            			--indeg[v];
+            			if (!indeg[v]) {
+                            pq.push(v);
+                        }
+            		}
+            	}
+                return (order.size() == n ? true : false);
+            }"""
+
+    'FLOYD':
+        'prefix': 'FLOYD'
+        'body': """
+            void floyd_warshall() {
+                for (int k = 1; k <= n; ++k) {
+                    for (int i = 1; i <= n; ++i) {
+                        for (int j = 1; j <= n; ++j) {
+                            if (dp[i][k] < LINF and dp[k][j] < LINF) {
+                                dp[i][j] = min(dp[i][j], dp[i][k] + dp[k][j]);
+                            }
+                        }
+                    }
+                }
+            }"""
+
+    'SEG_TREE_DFS':
+        'prefix': 'SEG_TREE_DFS'
+        'body': """
+            void dfs(int s, int p, int lvl) {
+                level[s] = lvl;
+                from[s] = to[s] = ++timer;
+                for (auto &x: g[s]) {
+                    if (x != p) {
+                        dfs(x, s, lvl + 1);
+                        to[s] = max(to[s], to[x]);
+                    }
+                }
+            }"""
+
+    'MANACHER':
+        'prefix': 'MANACHER'
+        'body': """
+            void manacher(string s) {
+                int n = s.size();
+                for (int i = 0, l = 0, r = -1; i < n; ++i) {
+                    int k = (i > r) ? 1 : min(odd[l + r - i], r - i + 1);
+                    while (0 <= i - k and i + k < n and s[i - k] == s[i + k]) {
+                        ++k;
+                    }
+                    odd[i] = k--;
+                    if (i + k > r) {
+                        l = i - k;
+                        r = i + k;
+                    }
+                }
+                for (int i = 0, l = 0, r = -1; i < n; ++i) {
+                    int k = (i > r) ? 0 : min(even[l + r - i + 1], r - i + 1);
+                    while (0 <= i - k - 1 and i + k < n and s[i - k - 1] == s[i + k]) {
+                        ++k;
+                    }
+                    even[i] = k--;
+                    if (i + k > r) {
+                        l = i - k - 1;
+                        r = i + k ;
+                    }
+                }
+            }"""
+
+    'SUFFIX_ARRAY':
+        'prefix': 'SUFFIX_ARRAY'
+        'body': """
+            vector < int > suffix_array(string s) {
+                s += '$';
+                int n = s.size(), alpha = 256;
+                vector < int > p(n), c(n), cnt(max(alpha, n), 0);
+                for (int i = 0; i < n; ++i) {
+                    ++cnt[s[i]];
+                }
+                for (int i = 1; i < alpha; ++i) {
+                    cnt[i] += cnt[i - 1];
+                }
+                for (int i = 0; i < n; ++i) {
+                    p[--cnt[s[i]]] = i;
+                }
+                c[p[0]] = 0;
+                int classes = 1;
+                for (int i = 1; i < n; ++i) {
+                    if (s[p[i]] != s[p[i - 1]]) {
+                        ++classes;
+                    }
+                    c[p[i]] = classes - 1;
+                }
+                vector < int > pn(n), cn(n);
+                for (int h = 0; (1 << h) < n; ++h) {
+                    for (int i = 0; i < n; ++i) {
+                        pn[i] = p[i] - (1 << h);
+                        if (pn[i] < 0) {
+                            pn[i] += n;
+                        }
+                    }
+                    fill(cnt.begin(), cnt.begin() + classes, 0);
+                    for (int i = 0; i < n; ++i) {
+                        ++cnt[c[pn[i]]];
+                    }
+                    for (int i = 1; i < classes; ++i) {
+                        cnt[i] += cnt[i - 1];
+                    }
+                    for (int i = n - 1; i >= 0; --i) {
+                        p[--cnt[c[pn[i]]]] = pn[i];
+                    }
+                    cn[p[0]] = 0;
+                    classes = 1;
+                    for (int i = 1; i < n; ++i) {
+                        pair < int, int > cur = {c[p[i]], c[(p[i] + (1 << h)) % n]};
+                        pair < int, int > prev = {c[p[i - 1]], c[(p[i - 1] + (1 << h)) % n]};
+                        if (cur != prev) {
+                            ++classes;
+                        }
+                        cn[p[i]] = classes - 1;
+                    }
+                    c.swap(cn);
+                }
+                p.erase(p.begin());
+                return p;
+            }"""
+
+    'KASAI':
+        'prefix': 'KASAI'
+        'body': """
+            vector < int > kasai(string s, vector < int > p) {
+                int n = s.size();
+                vector < int > rank(n, 0);
+                for (int i = 0; i < n; ++i) {
+                    rank[p[i]] = i;
+                }
+                int k = 0;
+                vector < int > lcp(n - 1, 0);
+                for (int i = 0; i < n; ++i) {
+                    if (rank[i] == n - 1) {
+                        k = 0;
+                        continue;
+                    }
+                    int j = p[rank[i] + 1];
+                    while (i + k < n and j + k < n and s[i + k] == s[j + k]) {
+                        ++k;
+                    }
+                    lcp[rank[i]] = k;
+                    if (k) {
+                        --k;
+                    }
+                }
+                return lcp;
+            }"""
+
+    'DINIC':
+        'prefix': 'DINIC'
+        'body': """
+            struct Edge {
+                int u, v;
+                ll cap, flow;
+                Edge() {}
+                Edge(int u, int v, ll cap): u(u), v(v), cap(cap), flow(0) {}
+            };
+
+            struct Dinic {
+                int n;
+                vector<Edge> e;
+                vector<vi> g;
+                vi d, pt;
+
+                Dinic(int n): n(n), e(0), g(n), d(n), pt(n) {}
+
+                void AddEdge(int u, int v, ll cap) {
+                    if (u != v) {
+                        e.eb(Edge(u, v, cap));
+                        g[u].eb(e.size() - 1);
+                        e.eb(Edge(v, u, 0));
+                        g[v].eb(e.size() - 1);
+                    }
+                }
+
+                bool bfs(int s, int t) {
+                    queue<int> q;
+                    q.push(s);
+                    fill(d.begin(), d.end(), n + 1);
+                    d[s] = 0;
+                    while (!q.empty()) {
+                        int u = q.front();
+                        q.pop();
+                        if (u == t) break;
+                        for (int k: g[u]) {
+                            Edge &ee = e[k];
+                            if (ee.flow < ee.cap and d[ee.v] > d[ee.u] + 1) {
+                                d[ee.v] = d[ee.u] + 1;
+                                q.push(ee.v);
+                            }
+                        }
+                    }
+                    return (d[t] != n + 1);
+                }
+
+                ll dfs(int u, int t, ll flow = -1) {
+                    if (u == t or !flow) {
+                        return flow;
+                    }
+                    for (int &i = pt[u]; i < g[u].size(); ++i) {
+                        Edge &ee = e[g[u][i]];
+                        Edge &oe = e[g[u][i] ^ 1];
+                        if (d[ee.v] == d[ee.u] + 1) {
+                            ll amt = ee.cap - ee.flow;
+                            if (flow != -1 and amt > flow) {
+                                amt = flow;
+                            }
+                            if (ll pushed = dfs(ee.v, t, amt)) {
+                              ee.flow += pushed;
+                              oe.flow -= pushed;
+                              return pushed;
+                            }
+                        }
+                    }
+                    return 0;
+                }
+
+                ll MaxFlow(int s, int t) {
+                    ll ans = 0;
+                    while (bfs(s, t)) {
+                        fill(pt.begin(), pt.end(), 0);
+                        while (ll flow = dfs(s, t)) {
+                            ans += flow;
+                        }
+                    }
+                    return ans;
+                }
+            };"""
+
+    'PUSH_RELABEL':
+        'prefix': 'PUSH_RELABEL'
+        'body': """
+            struct Edge {
+                int u, v, idx;
+                ll cap, flow;
+                Edge() {}
+                Edge(int u, int v, ll cap, ll flow, int idx): u(u), v(v), cap(cap), flow(flow), idx(idx) {}
+                Edge(int u, int v, ll cap, int idx): u(u), v(v), cap(cap), flow(0ll), idx(idx) {}
+            };
+
+            struct PushRelabel {
+                const ll flow_inf = 1e18;
+                int n;
+                vector<vector<Edge>> g;
+                vll excess;
+                vi height;
+
+                PushRelabel(int n): n(n), g(n), excess(n), height(n) {}
+
+                void AddEdge(int u, int v, ll cap) {
+                    g[u].eb(Edge(u, v, cap, g[v].size()));
+                    if (u == v) {
+                        ++g[u].back().idx;
+                    }
+                    g[v].eb(Edge(v, u, 0, g[u].size() - 1));
+                }
+
+                void push(Edge &e) {
+                    ll amt = min(excess[e.u], e.cap - e.flow);
+                    if (height[e.u] <= height[e.v] or !amt) return;
+                    e.flow += amt;
+                    g[e.v][e.idx].flow -= amt;
+                    excess[e.v] += amt;
+                    excess[e.u] -= amt;
+                }
+
+                void relabel(int u) {
+                    int d = INF;
+                    for (auto &x: g[u]) {
+                        if (x.cap - x.flow > 0) {
+                            d = min(d, height[x.v]);
+                        }
+                    }
+                    height[u] = d + 1;
+                }
+
+                vector<int> MaxHeightVertices(int s, int t) {
+                    vi ans;
+                    for (int i = 0; i < n; ++i) {
+                        if (i != s and i != t and excess[i] > 0) {
+                            if (ans.size() and height[i] > height[ans.front()]) {
+                                ans.clear();
+                            }
+                            if (ans.empty() or height[i] == height[ans.front()]) {
+                                ans.eb(i);
+                            }
+                        }
+                    }
+                    return ans;
+                }
+
+                long long MaxFlow(int s, int t) {
+                    excess.assign(n, 0);
+                    height.assign(n, 0);
+                    height[s] = n;
+                    excess[s] = flow_inf;
+                    for (auto &x: g[s]) {
+                        push(x);
+                    }
+                    vi cur;
+                    while (!(cur = MaxHeightVertices(s, t)).empty()) {
+                        for (auto i: cur) {
+                            bool pushed = false;
+                            for (auto &e: g[i]) {
+                                if (!excess[i]) break;
+                                if (e.cap - e.flow > 0 and height[e.u] == height[e.v] + 1) {
+                                    push(e);
+                                    pushed = true;
+                                }
+                            }
+                            if (!pushed) {
+                                relabel(i);
+                                break;
+                            }
+                        }
+                    }
+                    ll ans = 0;
+                    for (auto &e: g[s]) {
+                        ans += e.flow;
+                    }
+                    return ans;
+                }
+            };"""
+
+    'SCC':
+        'prefix': 'SCC'
+        'body': """
+            void dfs(int s) {
+                vis[s] = true;
+                for (auto &x: g[s]) {
+                    if (!vis[x]) {
+                        dfs(x);
+                    }
+                }
+                order.eb(s);
+            }
+
+            void dfs2 (int s) {
+                vis[s] = true;
+                comp[cnt].eb(s);
+                for (auto &x: g2[s]) {
+                    if (!vis[x]) {
+                        dfs2(x);
+                    }
+                }
+            }
+
+            void scc() {
+                for (int i = 1; i <= n; ++i) {
+                    if (!vis[i]) {
+                        dfs(i);
+                    }
+                }
+                fill(vis, vis + n + 1, false);
+                reverse(all(order));
+                for (auto &x: order) {
+                    if (!vis[x]) {
+                        dfs2(x);
+                        ++cnt;
+                    }
+                }
+            }"""
+
+    'CONVEX_HULL':
+        'prefix': 'CONVEX_HULL'
+        'body': """
+            struct pnt {
+                double x, y;
+            };
+
+            bool cross(pnt a, pnt b, pnt c) {
+                return ((b.x - a.x) * (c.y - a.y) - (b.y - a.y) * (c.x - a.x) <= 0);
+            }
+
+            vector<pnt> convex_hull(vector<pnt> p) {
+                int j = 0, n = p.size();
+                vector<pnt> hull(2 * n);
+                sort(all(p), [&](pnt a, pnt b) {
+                    return a.x < b.x or (a.x == b.x and a.y < b.y);
+                });
+                for (int i = 0; i < n; ++i) {
+                    while (j > 1 and cross(hull[j - 2], hull[j - 1], p[i])) {
+                        --j;
+                    }
+                    hull[j++] = p[i];
+                }
+                for (int i = n - 2, cur = j + 1; i >= 0; --i) {
+                    while (j >= cur and cross(hull[j - 2], hull[j - 1], p[i])) {
+                        --j;
+                    }
+                    hull[j++] = p[i];
+                }
+                hull.resize(j - 1);
+                return hull;
+            }"""
+
+    'MO':
+        'prefix': 'MO'
+        'body': """
+            struct Data {
+                int l, r, idx;
+                bool operator<(Data const& oth) {
+                    int b1 = l / SZ, b2 = oth.l / SZ;
+                    if (b1 == b2) {
+                        return ((b1 & 1) ? r > oth.r : r < oth.r);
+                    }
+                    return b1 < b2;
+                }
+            };
+
+            int n, a[N];
+            ll cur, ans[N];
+            vector<Data> Queries;
+
+            void insert(int x) {
+                cur += cnt[x ^ k];
+                ++cnt[x];
+            }
+
+            void remove(int x) {
+                --cnt[x];
+                cur -= cnt[x ^ k];
+            }
+
+            void Mo() {
+                sort(Queries.begin(), Queries.end());
+                int L = 1, R = 0;
+                for (int i = 0; i < Queries.size(); ++i) {
+                    while (L < Queries[i].l) {
+                        remove(a[L++]);
+                    }
+                    while (L > Queries[i].l) {
+                        insert(a[--L]);
+                    }
+                    while (R < Queries[i].r) {
+                        insert(a[++R]);
+                    }
+                    while (R > Queries[i].r) {
+                        remove(a[R--]);
+                    }
+                    ans[Queries[i].idx] = cur;
+                }
+            }"""
+
+    'GP':
+        'prefix': 'GP'
+        'body': """
+            const int RANDOM = chrono::high_resolution_clock::now().time_since_epoch().count();
+            struct chash {
+                int operator()(int x) const { return x ^ RANDOM; }
+            };
+            gp_hash_table<int, int, chash> cnt;"""
+
+    'SPARSE_TABLE':
+        'prefix': 'SPARSE_TABLE'
+        'body': """
+            void build() {
+                for (int i = 0; i < n; ++i) {
+                    st[0][i] = a[i];
+                }
+                for (int j = 1; j < LG; ++j) {
+                    for (int i = 0; i + (1 << j) <= n; ++i) {
+                        st[j][i] = min(st[j - 1][i], st[j - 1][i + (1 << (j - 1))]);
+                    }
+                }
+            }
+
+            int get(int L, int R) {
+                int j = lg[R - L + 1];
+                return min(st[j][L], st[j][R - (1 << j) + 1]);
+            }
+
+            lg[1] = 0;
+            for (int i = 2; i <= n; ++i) {
+                lg[i] = lg[i / 2] + 1;
+            }"""
